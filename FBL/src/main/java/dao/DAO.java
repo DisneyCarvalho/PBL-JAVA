@@ -8,7 +8,9 @@ public class DAO {
     private static TecnicDAO tenicDAO;
 
     public static TecnicDAO getTecnic() {
-        DAO.tenicDAO = new TecnicListImpl();
+        if (tenicDAO == null){
+            DAO.tenicDAO = new TecnicListImpl();
+        }
         return DAO.tenicDAO;
     }
 }

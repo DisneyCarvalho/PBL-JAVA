@@ -1,10 +1,15 @@
 package com.example.fbl.model;
 
-public class Componentes {
-    float Custo;
-    float Preco;
-    public Componentes(float preco, float custo) {
-        this.Custo = custo;
-        this.Preco = preco;
+public abstract class Componentes {
+    private float Custo;
+    private float Preco;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 }
+

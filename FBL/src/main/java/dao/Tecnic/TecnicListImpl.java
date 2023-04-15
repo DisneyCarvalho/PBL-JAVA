@@ -9,8 +9,8 @@ public class TecnicListImpl implements TecnicDAO{
     private int NID;
 
     public TecnicListImpl(){
-        this.tecnicos = new ArrayList<Tecnic>();
         this.NID =  0;
+        this.tecnicos = new ArrayList<Tecnic>();
     }
     @Override
     public Tecnic create(Tecnic tecnic) {

@@ -1,8 +1,8 @@
 package com.example.fbl.model;
 
-public class Servico {
-    float Preco;
-    Float Custo;
+public abstract class Servico {
+    private float Preco;
+    private float Custo;
 
     public Servico(float preco, float custo){
         this.Custo = custo;
