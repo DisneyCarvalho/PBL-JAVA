@@ -15,4 +15,7 @@ public interface TecnicDAO {
     public void update(Tecnic tecnico);
 
     public void delete (int id);
+
+
+
 }

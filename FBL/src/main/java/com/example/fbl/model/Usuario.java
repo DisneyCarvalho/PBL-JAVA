@@ -1,15 +1,13 @@
 package com.example.fbl.model;
 
-public class Usuario {
+public abstract class Usuario {
     private int Id;
     private int Senha;
     private String Email;
 
 
-    Usuario (int key,String email){
+    Usuario (int key){
     this.Senha = key;
-    this.Email = email;
-    // Fazer id
     }
 
     public int getId() {
