@@ -1,6 +1,8 @@
 package dao.Tecnic;
 
+import com.example.fbl.model.OrdenServico;
 import com.example.fbl.model.Tecnic;
+import dao.DAO;
 
 import java.util.ArrayList;
 
@@ -9,8 +11,8 @@ public class TecnicListImpl implements TecnicDAO{
     private int NID;
 
     public TecnicListImpl(){
-        this.tecnicos = new ArrayList<Tecnic>();
         this.NID =  0;
+        this.tecnicos = new ArrayList<Tecnic>();
     }
     @Override
     public Tecnic create(Tecnic tecnic) {
@@ -59,4 +61,7 @@ public class TecnicListImpl implements TecnicDAO{
 
         }
     }
+
+
+
 }
