@@ -29,12 +29,23 @@ public class DAO {
     private  static InstalacaoDAO instalacaoDAO;
     private static CompCompDAO compCompDAO;
 
+
+    /**
+     * Retorna uma instâcia implementada do DAO de tecnicos.
+     * @return
+     */
     public static TecnicDAO getTecnic() {
         if (tenicDAO == null){
             DAO.tenicDAO = new TecnicListImpl();
         }
         return DAO.tenicDAO;
     }
+
+
+    /**
+     * Retorna uma instâcia implementada do DAO de OrdenServico.
+     * @return
+     */
 
     public static OrdenServicoDAO getOrdenServico(){
         if (ordenServicoDAO == null){
@@ -43,6 +54,11 @@ public class DAO {
         return DAO.ordenServicoDAO;
     }
 
+    /**
+     * Retorna uma instâcia implementada do DAO de Cliente.
+     * @return
+     */
+
     public static ClienteDAO getCliente(){
         if (clienteDAO == null){
             DAO.clienteDAO = new ClienteListImpl();
@@ -50,6 +66,11 @@ public class DAO {
         return DAO.clienteDAO;
     }
 
+
+    /**
+     * Retorna uma instâcia implementada do DAO de OutroComp.
+     * @return
+     */
     public static OutroCompDAO getOutroComp(){
         if (outrocompDAO == null){
             DAO.outrocompDAO = new OutroCompListImpl();
@@ -58,12 +79,24 @@ public class DAO {
     }
 
 
+
+
+    /**
+     * Retorna uma instâcia implementada do DAO de Montagem.
+     * @return
+     */
     public static MontagemDAO getMontagem(){
         if (montagemDAO == null){
             DAO.montagemDAO = new MontagemListImpl();
         }
         return DAO.montagemDAO;
     }
+
+
+    /**
+     * Retorna uma instâcia implementada do DAO de Limpeza.
+     * @return
+     */
 
     public static LimpezaDAO getLimpeza(){
         if (limpezaDAO == null){
@@ -73,6 +106,11 @@ public class DAO {
     }
 
 
+    /**
+     * Retorna uma instâcia implementada do DAO de CompComp.
+     * @return
+     */
+
     public static CompCompDAO getCompComp(){
         if (compCompDAO == null){
             DAO.compCompDAO = new CompCompListImpl();
@@ -80,6 +118,11 @@ public class DAO {
         return DAO.compCompDAO;
     }
 
+
+    /**
+     * Retorna uma instâcia implementada do DAO de Instalacao.
+     * @return
+     */
     public static InstalacaoDAO getInstalacao(){
         if (instalacaoDAO == null){
             DAO.instalacaoDAO = new InstalacaoListImpl();

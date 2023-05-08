@@ -37,7 +37,10 @@ public class OrdenServico {
 
     }
 
-
+    /**
+     * Adiciona um servico a lista de servicos e soma o seu preco e seu custo
+     * @param servico
+     */
     public void addServico(Servico servico){
         this.preco += servico.getPreco();
         this.custo += servico.getCusto();
@@ -51,14 +54,23 @@ public class OrdenServico {
         this.status = status;
     }
 
+    /***
+     * seta o status como Finalizado
+     */
     public void finalizar(){
         this.status = "Finalizado";
     }
 
+    /**
+     * seta o status como cancelado
+     */
     public void cancelar(){
         this.status = "Cancelado";
     }
 
+    /**
+     * seta o status como Em andamento.
+     */
     public void andamento(){
         this.status = "Em Andamento";
     }

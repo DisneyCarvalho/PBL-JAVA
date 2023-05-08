@@ -5,6 +5,5 @@ import dao.CRUD;
 
 public interface MontagemDAO extends CRUD<Montagem> {
 
-    public void deleteAll();
 
 }

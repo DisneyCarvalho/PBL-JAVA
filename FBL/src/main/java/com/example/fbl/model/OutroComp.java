@@ -9,6 +9,11 @@ public class OutroComp extends Componentes{
     }
 
 
+    /**
+     * retira um item e retorna um objeto com o numero de itens que foi retirado.
+     * @param quantidade
+     * @return
+     */
     public OutroComp retiraItem(int quantidade){
         if (getQuantidade() >= quantidade){
             setQuantidade(getQuantidade()-quantidade);

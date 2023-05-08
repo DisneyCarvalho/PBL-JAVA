@@ -50,7 +50,6 @@ public interface OrdenServicoDAO extends CRUD<OrdenServico> {
 
 
 
-    public void deleteAll();
 
 
 

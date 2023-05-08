@@ -37,4 +37,10 @@ public interface CRUD <T> {
      * @param id
      */
     public void delete (int id);
+
+    /**
+     * Deleta os elementos da lista do obj e reseta o id
+     */
+    public void deleteAll();
+
 }
