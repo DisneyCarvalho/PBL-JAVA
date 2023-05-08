@@ -59,4 +59,10 @@ public class CompCompListImpl implements CompCompDAO {
             }
         }
     }
+
+    @Override
+    public void deleteAll() {
+        this.ListComps.clear();
+        this.NID= 0;
+    }
 }

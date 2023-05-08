@@ -62,6 +62,11 @@ public class TecnicListImpl implements TecnicDAO{
         }
     }
 
+    @Override
+    public void deleteAll() {
+        this.tecnicos.clear();
+        this.NID = 0;
+    }
 
 
 }

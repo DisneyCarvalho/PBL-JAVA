@@ -58,4 +58,10 @@ public class InstalacaoListImpl implements InstalacaoDAO{
             }
         }
     }
+
+    @Override
+    public void deleteAll() {
+        this.ListInstalacao.clear();
+        this.NID=0;
+    }
 }

@@ -26,13 +26,13 @@ public interface OrdenServicoDAO extends CRUD<OrdenServico> {
      * @param cliente
      * @return
      */
-    public int avaiacaoCliente(int cliente);
+    public float avaiacaoCliente(int cliente);
 
     /**
      * pega a media de avaliação de todas as ordem de servico
      * @return
      */
-    public int avaliacaoTodos();
+    public float avaliacaoTodos();
 
     /**
      * pega a media avaliação de um tecnico
@@ -40,13 +40,17 @@ public interface OrdenServicoDAO extends CRUD<OrdenServico> {
      * @return
      */
 
-    public int avaiacaoTecnico(int tecnico);
+    public float avaiacaoTecnico(int tecnico);
 
     /**
      * Atribui o id do tecnico a primeira ordem de servico disponivel.
      * @param idtec
      */
     public void pegaServico(int idtec);
+
+
+
+    public void deleteAll();
 
 
 

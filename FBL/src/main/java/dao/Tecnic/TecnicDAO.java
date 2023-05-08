@@ -16,6 +16,6 @@ public interface TecnicDAO {
 
     public void delete (int id);
 
-
+    public void deleteAll();
 
 }

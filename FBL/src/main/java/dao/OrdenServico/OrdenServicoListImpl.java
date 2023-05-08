@@ -95,11 +95,11 @@ public class OrdenServicoListImpl implements OrdenServicoDAO{
     }
 
     @Override
-    public int avaiacaoCliente(int cliente) {
-        int soma = 0;
+    public float avaiacaoCliente(int cliente) {
+        float soma = 0;
         int total = 0;
         for (OrdenServico ordem : DAO.getOrdenServico().getObj()){
-            if (ordem.getId() == cliente){
+            if (ordem.getCliente() == cliente){
                 soma += ordem.getAvaliaçãoDoCliente();
                 total +=1;
             }
@@ -108,8 +108,8 @@ public class OrdenServicoListImpl implements OrdenServicoDAO{
     }
 
     @Override
-    public int avaliacaoTodos() {
-        int soma = 0;
+    public float avaliacaoTodos() {
+        float soma = 0;
         int total = 0;
         for (OrdenServico ordem : DAO.getOrdenServico().getObj()){
             soma += ordem.getAvaliaçãoDoCliente();
@@ -120,8 +120,8 @@ public class OrdenServicoListImpl implements OrdenServicoDAO{
     }
 
     @Override
-    public int avaiacaoTecnico(int tecnico) {
-        int soma = 0;
+    public float avaiacaoTecnico(int tecnico) {
+        float soma = 0;
         int total = 0;
         for (OrdenServico ordem : DAO.getOrdenServico().getObj()){
             if (ordem.getTecnico() == tecnico){
@@ -132,7 +132,10 @@ public class OrdenServicoListImpl implements OrdenServicoDAO{
         return soma/total;
     }
 
-
+    public void deleteAll(){
+        this.Ordens.clear();
+        this.NID = 0;
+    }
 
 
 }

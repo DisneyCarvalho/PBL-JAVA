@@ -18,3 +18,6 @@ public class OutroComp extends Componentes{
         return null;
     }
 }
+
+
+

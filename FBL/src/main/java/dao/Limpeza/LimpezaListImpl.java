@@ -58,4 +58,10 @@ public class LimpezaListImpl implements LimpezaDAO {
             }
         }
     }
+
+    @Override
+    public void deleteAll() {
+        this.ListLimpeza.clear();
+        this.NID = 0;
+    }
 }

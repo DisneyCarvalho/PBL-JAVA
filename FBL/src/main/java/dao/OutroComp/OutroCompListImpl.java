@@ -59,4 +59,10 @@ public class OutroCompListImpl implements OutroCompDAO{
             }
         }
     }
+
+    @Override
+    public void deleteAll() {
+        this.ListOutroComp.clear();
+        this.NID = 0;
+    }
 }

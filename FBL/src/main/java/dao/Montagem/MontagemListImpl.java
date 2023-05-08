@@ -58,4 +58,10 @@ public class MontagemListImpl implements MontagemDAO{
             }
         }
     }
+
+    @Override
+    public void deleteAll() {
+        this.Montagens.clear();
+        this.NID = 0;
+    }
 }

@@ -61,4 +61,10 @@ public class ClienteListImpl implements ClienteDAO{
 
         }
     }
+
+    @Override
+    public void deleteAll() {
+        this.Clientes.clear();
+        this.NID=0;
+    }
 }

@@ -4,20 +4,31 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class OrdenServico {
-    int cliente;
-    int tecnico;
-    int id;
-    String status;
-    ArrayList<Servico> Servicos;
-    String descricao;
-    float preco;
-    float custo;
-    String metPagamento;
-    String dataCriacao;
-    String dataFinalizacao;
-    int avaliaçãoDoCliente;
+    private int cliente;
+    private int tecnico;
+    private int id;
+    private String status;
+    private ArrayList<Servico> Servicos;
+    private String descricao;
+    private float preco;
+    private float custo;
+    private String metPagamento;
+    private String dataCriacao;
+    private String dataFinalizacao;
+    private int avaliaçãoDoCliente;
 
-    public OrdenServico(){
+    public ArrayList<Servico> getServicos() {
+        return Servicos;
+    }
+    public void setServicos(ArrayList<Servico> servicos) {
+        this.Servicos = servicos;
+    }
+
+
+
+    public OrdenServico(int Cliente,String dataCriacao){
+        this.cliente = Cliente;
+        this.dataCriacao = dataCriacao;
         this.tecnico = -1;
         this.Servicos = new ArrayList<Servico>();
         this.preco = 0;
