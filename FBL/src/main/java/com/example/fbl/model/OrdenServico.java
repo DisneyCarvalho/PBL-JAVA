@@ -1,9 +1,10 @@
 package com.example.fbl.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class OrdenServico {
+public class OrdenServico implements Serializable {
     private int cliente;
     private int tecnico;
     private int id;

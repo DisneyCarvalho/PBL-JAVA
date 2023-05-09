@@ -1,6 +1,8 @@
 package com.example.fbl.model;
 
-public class OutroComp extends Componentes{
+import java.io.Serializable;
+
+public class OutroComp extends Componentes implements Serializable {
     String descricao;
 
 

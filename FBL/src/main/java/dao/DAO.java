@@ -1,21 +1,29 @@
 package dao;
 
 import dao.Cliente.ClienteDAO;
+import dao.Cliente.ClienteFileImpl;
 import dao.Cliente.ClienteListImpl;
 import dao.CompComp.CompCompDAO;
+import dao.CompComp.CompCompFileImpl;
 import dao.CompComp.CompCompListImpl;
 import dao.Instalacao.InstalacaoDAO;
+import dao.Instalacao.InstalacaoFileImpl;
 import dao.Instalacao.InstalacaoListImpl;
 import dao.Limpeza.LimpezaDAO;
+import dao.Limpeza.LimpezaFileImpl;
 import dao.Limpeza.LimpezaListImpl;
 import dao.Montagem.MontagemDAO;
+import dao.Montagem.MontagemFileImpl;
 import dao.Montagem.MontagemListImpl;
 import dao.OrdenServico.OrdenServicoDAO;
+import dao.OrdenServico.OrdenServicoFileImpl;
 import dao.OrdenServico.OrdenServicoListImpl;
 
 import dao.OutroComp.OutroCompDAO;
+import dao.OutroComp.OutroCompFileImpl;
 import dao.OutroComp.OutroCompListImpl;
 import dao.Tecnic.TecnicDAO;
+import dao.Tecnic.TecnicFileImpl;
 import dao.Tecnic.TecnicListImpl;
 
 public class DAO {
@@ -36,7 +44,7 @@ public class DAO {
      */
     public static TecnicDAO getTecnic() {
         if (tenicDAO == null){
-            DAO.tenicDAO = new TecnicListImpl();
+            DAO.tenicDAO = new TecnicFileImpl();
         }
         return DAO.tenicDAO;
     }
@@ -49,7 +57,7 @@ public class DAO {
 
     public static OrdenServicoDAO getOrdenServico(){
         if (ordenServicoDAO == null){
-            DAO.ordenServicoDAO = new OrdenServicoListImpl();
+            DAO.ordenServicoDAO = new OrdenServicoFileImpl();
         }
         return DAO.ordenServicoDAO;
     }
@@ -61,7 +69,7 @@ public class DAO {
 
     public static ClienteDAO getCliente(){
         if (clienteDAO == null){
-            DAO.clienteDAO = new ClienteListImpl();
+            DAO.clienteDAO = new ClienteFileImpl();
         }
         return DAO.clienteDAO;
     }
@@ -73,7 +81,7 @@ public class DAO {
      */
     public static OutroCompDAO getOutroComp(){
         if (outrocompDAO == null){
-            DAO.outrocompDAO = new OutroCompListImpl();
+            DAO.outrocompDAO = new OutroCompFileImpl();
         }
         return DAO.outrocompDAO;
     }
@@ -87,7 +95,7 @@ public class DAO {
      */
     public static MontagemDAO getMontagem(){
         if (montagemDAO == null){
-            DAO.montagemDAO = new MontagemListImpl();
+            DAO.montagemDAO = new MontagemFileImpl();
         }
         return DAO.montagemDAO;
     }
@@ -100,7 +108,7 @@ public class DAO {
 
     public static LimpezaDAO getLimpeza(){
         if (limpezaDAO == null){
-            DAO.limpezaDAO = new LimpezaListImpl();
+            DAO.limpezaDAO = new LimpezaFileImpl();
         }
         return DAO.limpezaDAO;
     }
@@ -113,7 +121,7 @@ public class DAO {
 
     public static CompCompDAO getCompComp(){
         if (compCompDAO == null){
-            DAO.compCompDAO = new CompCompListImpl();
+            DAO.compCompDAO = new CompCompFileImpl();
         }
         return DAO.compCompDAO;
     }
@@ -125,7 +133,7 @@ public class DAO {
      */
     public static InstalacaoDAO getInstalacao(){
         if (instalacaoDAO == null){
-            DAO.instalacaoDAO = new InstalacaoListImpl();
+            DAO.instalacaoDAO = new InstalacaoFileImpl();
         }
         return DAO.instalacaoDAO;
     }

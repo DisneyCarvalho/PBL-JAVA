@@ -50,12 +50,13 @@ class LimpezaListImplTest {
     void getObj() {
         LimpezaDAO limT= DAO.getLimpeza();
 
-        ArrayList<Limpeza> lista = new ArrayList<Limpeza>();
 
-        lista.add(Limp1);
-        lista.add(Limp2);
 
-        assertEquals(lista,limT.getObj());
+        assertEquals(2,limT.getObj().size());
+        assertEquals(51,limT.getById(0).getPreco());
+        assertEquals(13,limT.getById(0).getCusto());
+        assertEquals(89,limT.getById(1).getPreco());
+        assertEquals(5,limT.getById(1).getCusto());
 
 
 
@@ -65,7 +66,7 @@ class LimpezaListImplTest {
     void getById() {
         LimpezaDAO limT= DAO.getLimpeza();
 
-        assertEquals(Limp2,limT.getById(1));
+        assertEquals(1,limT.getById(1).getId());
 
 
 

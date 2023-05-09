@@ -59,7 +59,11 @@ class MontagemListImplTest {
         lista.add(Mont1);
         lista.add(Mont2);
 
-        assertEquals(lista,montD.getObj());
+        assertEquals(2,montD.getObj().size());
+        assertEquals(15,montD.getById(0).getPreco());
+            assertEquals(56,montD.getById(0).getCusto());
+        assertEquals(5,montD.getById(1).getPreco());
+        assertEquals(2,montD.getById(1).getCusto());
 
 
     }

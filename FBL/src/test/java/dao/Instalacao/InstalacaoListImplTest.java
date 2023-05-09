@@ -56,7 +56,11 @@ class InstalacaoListImplTest {
         lista.add(Inst1);
         lista.add(Inst2);
 
-        assertEquals(lista,instaL.getObj());
+        assertEquals(2,instaL.getObj().size());
+        assertEquals(1,instaL.getById(0).getPreco());
+        assertEquals(2,instaL.getById(0).getCusto());
+        assertEquals(789,instaL.getById(1).getPreco());
+        assertEquals(61,instaL.getById(1).getCusto());
 
 
 

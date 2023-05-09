@@ -51,12 +51,11 @@ class ClienteListImplTest {
     void getObj() {
 
         ClienteDAO clie= DAO.getCliente();
-        ArrayList<Cliente> lista = new ArrayList<Cliente>();
 
-        lista.add(clie1);
-        lista.add(clie2);
+        assertEquals(2,clie.getObj().size());
+        assertEquals("Arnold Schwarzenegger",clie.getById(0).getNome());
+        assertEquals("Clovis Basilio dos Santos",clie.getById(1).getNome());
 
-        assertEquals(lista,clie.getObj());
     }
 
     @Test

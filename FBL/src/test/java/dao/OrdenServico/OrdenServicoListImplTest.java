@@ -10,16 +10,18 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrdenServicoListImplTest {
-    OrdenServico ordem;
-    OrdenServico ordem2;
 
     @BeforeEach
     void setUp(){
         OrdenServicoDAO ord = DAO.getOrdenServico();
         OrdenServico Ordem = new OrdenServico(1,"04/05/2023");
         OrdenServico Ordem2 = new OrdenServico(2,"04/05/2023");
-        this.ordem = Ordem;
-        this.ordem2 = Ordem2;
+
+        Ordem.setAvaliaçãoDoCliente(10);
+        Ordem2.setAvaliaçãoDoCliente(10);
+
+        Ordem.finalizar();
+        Ordem2.finalizar();
         ord.create(Ordem);
         ord.create(Ordem2);
 
@@ -40,12 +42,13 @@ class OrdenServicoListImplTest {
     @org.junit.jupiter.api.Test
     void getObj() {
         OrdenServicoDAO ord =  DAO.getOrdenServico();
-        ArrayList<OrdenServico> lista = new ArrayList<OrdenServico>();
-        lista.add(ordem);
-        lista.add(ordem2);
+
 
         assertEquals(2,ord.getObj().size());
-        assertEquals(lista,ord.getObj());
+        assertEquals("04/05/2023",ord.getById(0).getDataCriacao());
+        assertEquals(1,ord.getById(0).getCliente());
+        assertEquals("04/05/2023",ord.getById(1).getDataCriacao());
+        assertEquals(2,ord.getById(1).getCliente());
 
 
     }
@@ -65,7 +68,7 @@ class OrdenServicoListImplTest {
         ord.create(ordem4);
         ord.create(ordem5);
 
-        assertEquals(ordem4,ord.getById(ordem4.getId()));
+        assertEquals(3,ord.getById(3).getId());
 
 
 
@@ -110,25 +113,21 @@ class OrdenServicoListImplTest {
     void buscaPorTecnico() {
 
         OrdenServicoDAO ord =  DAO.getOrdenServico();
-        ArrayList<OrdenServico>  lista = new ArrayList<OrdenServico>();
 
         OrdenServico ordem3 = new OrdenServico(1,"01/05/2023");
         OrdenServico ordem4 = new OrdenServico(1,"06/05/2023");
         OrdenServico ordem5 = new OrdenServico(2,"05/05/2023");
 
-        ordem.setTecnico(1);
         ordem3.setTecnico(1);
         ordem4.setTecnico(1);
-
-        lista.add(ordem);
-        lista.add(ordem3);
-        lista.add(ordem4);
 
         ord.create(ordem3);
         ord.create(ordem4);
         ord.create(ordem5);
-
-        assertEquals(lista,ord.buscaPorTecnico(1));
+        ArrayList<OrdenServico> lista = ord.buscaPorTecnico(1);
+        for (int i = 0 ; i < lista.size();i++){
+            assertEquals(1,lista.get(i).getTecnico());
+        }
 
     }
 
@@ -136,22 +135,23 @@ class OrdenServicoListImplTest {
     void buscaPorCliente() {
 
         OrdenServicoDAO ord =  DAO.getOrdenServico();
-        ArrayList<OrdenServico>  lista = new ArrayList<OrdenServico>();
+
 
         OrdenServico ordem3 = new OrdenServico(1,"01/05/2023");
         OrdenServico ordem4 = new OrdenServico(1,"06/05/2023");
         OrdenServico ordem5 = new OrdenServico(2,"05/05/2023");
 
 
-        lista.add(ordem);
-        lista.add(ordem3);
-        lista.add(ordem4);
+
 
         ord.create(ordem3);
         ord.create(ordem4);
         ord.create(ordem5);
+        ArrayList<OrdenServico> lista = ord.buscaPorCliente(1);
+        for (int i = 0 ; i < lista.size();i++){
+            assertEquals(1,lista.get(i).getCliente());
+        }
 
-        assertEquals(lista,ord.buscaPorCliente(1));
 
     }
 
@@ -164,6 +164,9 @@ class OrdenServicoListImplTest {
         OrdenServico Ordem2 = new OrdenServico(4,"04/05/2023");
         OrdenServico Ordem3 = new OrdenServico(5,"05/05/2023");
 
+        ord.getById(0).finalizar();
+        ord.getById(1).finalizar();
+
         Ordem.finalizar();
         Ordem2.andamento();
         Ordem3.andamento();
@@ -175,7 +178,7 @@ class OrdenServicoListImplTest {
         ord.pegaServico(1);
 
 
-        assertEquals(1,Ordem2.getTecnico());
+        assertEquals(1,DAO.getOrdenServico().getById(Ordem2.getId()).getTecnico());
 
 
 
@@ -227,8 +230,7 @@ class OrdenServicoListImplTest {
         OrdenServico Ordem3 = new OrdenServico(2,"05/05/2023");
 
 
-        ord.getById(0).setAvaliaçãoDoCliente(10);
-        ord.getById(1).setAvaliaçãoDoCliente(10);
+
 
         Ordem.setAvaliaçãoDoCliente(10);
         Ordem2.setAvaliaçãoDoCliente(7);

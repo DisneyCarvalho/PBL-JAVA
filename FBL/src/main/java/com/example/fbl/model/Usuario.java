@@ -1,6 +1,8 @@
 package com.example.fbl.model;
 
-public abstract class Usuario {
+import java.io.Serializable;
+
+public abstract class Usuario implements Serializable {
     private int Id;
     private int Senha;
     private String Email;

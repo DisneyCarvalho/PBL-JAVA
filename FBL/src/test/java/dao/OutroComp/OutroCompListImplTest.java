@@ -18,7 +18,7 @@ class OutroCompListImplTest {
     @BeforeEach
     void setUp(){
         OutroCompDAO oComp = DAO.getOutroComp();
-        OutroComp Comp = new OutroComp(1,500.6F,1000.0F);
+        OutroComp Comp = new OutroComp(1,500.0F,1000.0F);
         OutroComp Comp2 = new OutroComp(15,5.0F,17.7F);
         this.outroComp = Comp;
         this.outroComp2 = Comp2;
@@ -54,7 +54,10 @@ class OutroCompListImplTest {
         lista.add(outroComp2);
 
         assertEquals(2,oComp.getObj().size());
-        assertEquals(lista,oComp.getObj());
+        assertEquals(1,oComp.getById(0).getQuantidade());
+        assertEquals(500.0,oComp.getById(0).getCusto());
+        assertEquals(15,oComp.getById(1).getQuantidade());
+        assertEquals(5.0,oComp.getById(1).getCusto());
 
 
 

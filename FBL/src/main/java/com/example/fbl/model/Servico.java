@@ -1,6 +1,8 @@
 package com.example.fbl.model;
 
-public abstract class Servico {
+import java.io.Serializable;
+
+public abstract class Servico  implements Serializable {
     private float Preco;
     private float Custo;
     private int id;

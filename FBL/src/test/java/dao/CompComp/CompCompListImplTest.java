@@ -52,7 +52,11 @@ class CompCompListImplTest {
         lista.add(comp1);
         lista.add(comp2);
 
-        assertEquals(lista,comP.getObj());
+        assertEquals(2,comP.getObj().size());
+        assertEquals(14,comP.getById(0).getQuantidade());
+        assertEquals(15,comP.getById(0).getCusto());
+        assertEquals(4,comP.getById(1).getQuantidade());
+        assertEquals(5,comP.getById(1).getCusto());;
 
     }
 

@@ -1,6 +1,8 @@
 package com.example.fbl.model;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private int Id;
     private String Endenreco;
     private String Telefone;

@@ -55,12 +55,12 @@ class TecnicListImplTest {
     @Test
     void getTecnicos() {
         TecnicDAO tecT= DAO.getTecnic();
-        ArrayList<Tecnic> lista = new ArrayList<Tecnic>();
 
-        lista.add(tecnico1);
-        lista.add(tecnico2);
+        assertEquals(2,tecT.getTecnicos().size());
+        assertEquals(551,tecT.getById(0).getSenha());
+        assertEquals(511,tecT.getById(1).getSenha());
 
-        assertEquals(lista,tecT.getTecnicos());
+
 
 
 
@@ -70,7 +70,7 @@ class TecnicListImplTest {
     void getById() {
         TecnicDAO tecT= DAO.getTecnic();
 
-        assertEquals(tecnico2,tecT.getById(tecnico2.getId()));
+        assertEquals(511,tecT.getById(1).getSenha());
 
 
     }

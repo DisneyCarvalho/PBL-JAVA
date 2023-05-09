@@ -1,6 +1,8 @@
 package com.example.fbl.model;
 
-public class Montagem extends Servico{
+import java.io.Serializable;
+
+public class Montagem extends Servico implements Serializable {
 
 
     public Montagem(float preco, float custo) {

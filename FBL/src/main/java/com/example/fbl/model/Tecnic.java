@@ -1,6 +1,8 @@
 package com.example.fbl.model;
 
-public class Tecnic extends Usuario{
+import java.io.Serializable;
+
+public class Tecnic extends Usuario implements Serializable {
 
 
 
