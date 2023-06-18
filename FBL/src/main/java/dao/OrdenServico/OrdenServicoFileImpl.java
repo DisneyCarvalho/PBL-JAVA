@@ -35,10 +35,10 @@ public class OrdenServicoFileImpl implements OrdenServicoDAO{
     public OrdenServico create(OrdenServico Obj) {
 
         ArrayList<OrdenServico> lista = Arquivo.ler(nome);
-
         Obj.setId(NID);
         this.NID++;
         lista.add(Obj);
+
         Arquivo.gravar(lista,nome);
 
 
@@ -68,9 +68,11 @@ public class OrdenServicoFileImpl implements OrdenServicoDAO{
     @Override
     public void update(OrdenServico Obj) {
         ArrayList<OrdenServico> lista = Arquivo.ler(nome);
+
+
         for(int i =0; i < lista.size();i++) {
             if (lista.get(i).getId() == Obj.getId()) {
-                lista.add(i, Obj);
+                lista.set(i, Obj);
                 Arquivo.gravar(lista,nome);
                 return;
             }

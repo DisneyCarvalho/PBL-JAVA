@@ -71,7 +71,7 @@ public class MontagemFileImpl implements MontagemDAO {
         ArrayList<Montagem> lista = Arquivo.ler(nome);
         for(int i =0; i < lista.size();i++) {
             if (lista.get(i).getId() == Obj.getId()) {
-                lista.add(i, Obj);
+                lista.set(i, Obj);
                 Arquivo.gravar(lista,nome);
                 return;
             }

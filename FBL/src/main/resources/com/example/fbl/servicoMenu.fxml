@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fbl.controle.ControllerServico">
+   <children>
+      <TableView fx:id="ServOrd" layoutX="51.0" layoutY="100.0" prefHeight="200.0" prefWidth="213.0">
+        <columns>
+          <TableColumn fx:id="colName" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="colValor" prefWidth="75.0" text="Preco" />
+            <TableColumn fx:id="colDesc" prefWidth="75.0" text="Custo" />
+        </columns>
+      </TableView>
+      <TableView fx:id="Serv" layoutX="341.0" layoutY="100.0" prefHeight="200.0" prefWidth="213.0">
+         <columns>
+            <TableColumn fx:id="colName1" prefWidth="75.0" text="Nome" />
+            <TableColumn fx:id="colValor1" prefWidth="75.0" text="Preco" />
+            <TableColumn fx:id="colDesc1" prefWidth="75.0" text="Custo" />
+         </columns>
+      </TableView>
+      <Text layoutX="64.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Servicos da ordem">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="388.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Servicos">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="addBot" layoutX="151.0" layoutY="337.0" mnemonicParsing="false" onAction="#addAction" text="Adicionar" />
+      <Button fx:id="removeBot" layoutX="363.0" layoutY="337.0" mnemonicParsing="false" onAction="#removeAction" text="Remover" />
+      <Button fx:id="criarBot" layoutX="251.0" layoutY="337.0" mnemonicParsing="false" onAction="#criarAction" text="Criar Servico" />
+      <Button fx:id="AualizarBot" layoutX="514.0" layoutY="23.0" mnemonicParsing="false" onAction="#atualizarAction" text="Atualizar" />
+      <Button fx:id="voltarBot" layoutX="521.0" layoutY="337.0" mnemonicParsing="false" onAction="#voltarAction" text="Voltar" />
+   </children>
+</Pane>

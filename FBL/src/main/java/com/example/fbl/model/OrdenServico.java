@@ -48,6 +48,8 @@ public class OrdenServico implements Serializable {
         this.Servicos.add(servico);
     }
 
+
+
     public String getStatus() {
         return status;
     }
